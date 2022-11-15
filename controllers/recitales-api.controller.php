@@ -33,7 +33,6 @@ class RecitalApiController {
             $page =  $_GET["page"] ?? 1;
             $limit = $_GET["limit"] ?? $this->limit_default;
 
-            $recitales=0;
             
             $this->verifyParams($filtercolumn, $filtervalue, $orderBy, $order, $page, $limit);
 
@@ -105,6 +104,10 @@ class RecitalApiController {
 
      //----------------------------Funcion delete--------------------//
     public function deleteRecital($params = null) {
+        if(!$this->authHelper->isLoggedIn()){
+            $this->view->response("Necesitas loguearte para poder realizar esta accion", 401);
+            return;
+        }
         $id = $params[':ID'];
         $recital = $this->model->getrecitalById($id);
 
@@ -118,6 +121,7 @@ class RecitalApiController {
 
     //----------------------------Funcion insert--------------------//
     public function insertRecital($params = null) {
+      
         $recital = $this->getData();
         try{
             if (empty($recital->fecha) || empty($recital->lugar) || empty($recital->artista_id)) {
@@ -134,6 +138,10 @@ class RecitalApiController {
 
      //----------------------------Funcion edit--------------------//
     public function updateRecital($params = null){
+        if(!$this->authHelper->isLoggedIn()){
+            $this->view->response("Necesitas loguearte para poder realizar esta accion", 401);
+            return;
+        }
         $recital = $this->getData();
         $recital_id = $params[':ID'];
         try{

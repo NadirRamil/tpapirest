@@ -135,5 +135,9 @@ Se mostrarán los 4 recitales que se encuentran en la página 3.
 http://localhost/tpapirest/api/recitales?page=3&limit=4
 
 
-
+## Token :
+Para realizar actualizaciones o eliminar recitales debemos tener permiso, para eso debemos ingresar:
+Email: nadirramil92@gmail.com
+Contraseña: nash13
+En authorization con el type Basic Auth, luego en la URL colocar http://localhost/tpapirest/api/recitales/auth/token cuando se clickee en send se generara un token (por 15min) el cual hay que colocar en authorization type bearer token y en la url  http://localhost/tpapirest/api/recitales luego de esto ya se podra editar y borrar.
 
