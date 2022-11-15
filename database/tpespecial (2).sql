@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2022 a las 06:19:12
+-- Tiempo de generación: 15-11-2022 a las 21:55:09
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -48,7 +48,8 @@ INSERT INTO `artistas` (`artista_id`, `nombre`, `nacionalidad`) VALUES
 (9, 'Eros Ramazzotti', 'Italia'),
 (10, 'Ricky Martin', 'Puerto Rico'),
 (11, 'Andres Calamaro', 'Argentina'),
-(12, 'Bad Bunny', 'Puerto Rico');
+(12, 'Bad Bunny', 'Puerto Rico'),
+(16, 'Coldplay', 'Reino Unido');
 
 -- --------------------------------------------------------
 
@@ -68,7 +69,6 @@ CREATE TABLE `recitales` (
 --
 
 INSERT INTO `recitales` (`fecha`, `lugar`, `artista_id`, `id_recital`) VALUES
-('2022-10-01', 'Estadio José Amalfitani', 2, 4),
 ('2022-10-06', 'Estadio José Amalfitani', 3, 5),
 ('2022-11-08', 'Estadio Antonio Vespucio Liberti', 4, 11),
 ('2022-12-03', 'Estadio Antonio Vespucio Liberti', 5, 12),
@@ -78,7 +78,23 @@ INSERT INTO `recitales` (`fecha`, `lugar`, `artista_id`, `id_recital`) VALUES
 ('2022-12-02', 'Movistar Arena', 9, 16),
 ('2022-11-24', 'Movistar Arena', 10, 17),
 ('2022-11-06', 'Movistar Arena', 11, 18),
-('2022-11-04', 'Estadio Antonio Vespucio Liberti', 12, 19);
+('2022-11-04', 'Estadio Antonio Vespucio Liberti', 12, 19),
+('2022-10-07', 'Estadio José Amalfitani', 3, 20),
+('2022-11-12', 'Estadio Antonio Vespucio Liberti', 12, 22),
+('2022-10-25', 'Estadio Mâs Monumental', 16, 23),
+('2022-10-26', 'Estadio Mâs Monumental', 16, 24),
+('2022-10-28', 'Estadio Mâs Monumental', 16, 25),
+('2022-10-29', 'Estadio Mâs Monumental', 16, 26),
+('2022-11-01', 'Estadio Mâs Monumental', 16, 27),
+('2022-11-02', 'Estadio Mâs Monumental', 16, 28),
+('2022-11-04', 'Estadio Mâs Monumental', 16, 29),
+('2022-11-05', 'Estadio Mâs Monumental', 16, 30),
+('2022-11-07', 'Estadio Mâs Monumental', 16, 31),
+('2022-11-08', 'Estadio Mâs Monumental', 16, 32),
+('2022-10-25', 'nadnasdn', 10, 33),
+('2022-12-22', 'La Bomboneraa', 3, 34),
+('2022-11-30', 'Estadio Mâs Monumental		', 2, 35),
+('2023-01-19', 'Estadio Mâs Monumental		', 10, 36);
 
 -- --------------------------------------------------------
 
@@ -89,15 +105,16 @@ INSERT INTO `recitales` (`fecha`, `lugar`, `artista_id`, `id_recital`) VALUES
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'nadirramil92@gmail.com', '$2a$12$QImiY.a8wYpYPd.6k4xuwejBcsDW37dMIerW.uSe5Jd1JauG/onl6');
+INSERT INTO `users` (`id`, `email`, `password`, `name`) VALUES
+(1, 'nadirramil92@gmail.com', '$2a$12$QImiY.a8wYpYPd.6k4xuwejBcsDW37dMIerW.uSe5Jd1JauG/onl6', 'uno');
 
 --
 -- Índices para tablas volcadas
@@ -131,13 +148,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `artistas`
 --
 ALTER TABLE `artistas`
-  MODIFY `artista_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `artista_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `recitales`
 --
 ALTER TABLE `recitales`
-  MODIFY `id_recital` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_recital` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

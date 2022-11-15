@@ -33,6 +33,8 @@ class RecitalApiController {
             $page =  $_GET["page"] ?? 1;
             $limit = $_GET["limit"] ?? $this->limit_default;
 
+            $recitales=0;
+            
             $this->verifyParams($filtercolumn, $filtervalue, $orderBy, $order, $page, $limit);
 
             if (($filtercolumn != null)&& ($filtervalue != null)) {
@@ -45,7 +47,7 @@ class RecitalApiController {
             }else{
                 $this->view->response("No hay Recitales", 204);
             }
-        } catch (Exception) {
+        } catch (Exception $e) {
             return $this->view->response("Internal Server Error", 500);
         }
     }

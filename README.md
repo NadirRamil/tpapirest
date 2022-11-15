@@ -8,15 +8,15 @@
 El servicio permite listar los recitales cuya base de datos se encuentra almacenada en tpespecial. Permite agregar, editar y eliminar diferentes registros.Tambien, es posible realizar consultas filtrando por campo : id_recital, fecha, lugar,artista_id. Permitiendo realizar un paginado y un ordenamiento de forma ascendente o descendente.
 
 ## Pueba con postman
-El endpoint de la API es: http://localhost/tpeapirest/api/recitales
+El endpoint de la API es: http://localhost/tpapirest/api/recitales
 
 
 # Recurso	           Método	                Endpoint	                        status    
-Get recitales 	    GET	      http://localhost/tpeapirest/api/recitales/	  200  
-Get recital by ID     GET	      http://localhost/tpeapirest/api/recitales/:ID	  200
-Create recital        POST	      http://localhost/tpeapirest/api/recitales/	  201   
-Update recital	    PUT	      http://localhost/tpeapirest/api/recitales/:ID	  200
-Delete recital	    DELETE	      http://localhost/tpeapirest/api/recitales/:ID	  200
+Get recitales 	    GET	      http://localhost/tpapirest/api/recitales/	  200  
+Get recital by ID     GET	      http://localhost/tpapirest/api/recitales/:ID	  200
+Create recital        POST	      http://localhost/tpapirest/api/recitales/	  201   
+Update recital	    PUT	      http://localhost/tpapirest/api/recitales/:ID	  200
+Delete recital	    DELETE	      http://localhost/tpapirest/api/recitales/:ID	  200
 
 
 
@@ -39,15 +39,15 @@ Indica que el servidor encontró una condición inesperada que le impide complet
 ## RECURSOS:
 
 ## GET Obtener lista de recitales:
-http://localhost/tpeapirest/api/recitales
+http://localhost/tpapirest/api/recitales
 Retorna la lista de todos los recitales que estan en la base de datos. 
 
 ## GET obtener un recital:
-http://localhost/tpeapirest/api/recitales/:ID
+http://localhost/tpapirest/api/recitales/:ID
 Retorna un único recital con el id indicado, mostrando mas detalladamente informacion sobre el artista
 
 ## POST un recital:
-http://localhost/tpeapirest/api/recitales
+http://localhost/tpapirest/api/recitales
 
 (Los parametros ID son autoincrementables no se tiene que pasar)
 Agregar un nuevo recital.
@@ -63,7 +63,7 @@ Para cargar los datos, usamos la salida en formato JSON. Para ello, lo escribimo
 de la tabla artista de la base de datos
 
 ## PUT un recital:
-http://localhost/tpeapirest/api/recitales/:ID
+http://localhost/tpapirest/api/recitales/:ID
 
 Editar un recital.
 Para cargar los datos, usamos la salida en formato JSON. Para ello, lo escribimos en el body de la solicitud.
